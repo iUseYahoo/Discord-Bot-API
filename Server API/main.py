@@ -10,7 +10,7 @@ else:
 
 app = Flask(__name__)
 
-portnum = 8081
+portnum = 8888
 
 ###########################################
 # Home Page                               #
@@ -28,7 +28,7 @@ def home_page():
 def dictionary():
     get_word = request.args.get('word').lower()
 
-    bad_sql = open('bad_sql.txt', 'r')
+    bad_sql = open('../bad_sql.txt', 'r')
 
     for line in bad_sql:
         if get_word in line:
@@ -50,11 +50,12 @@ def dictionary():
 
 if __name__ == '__main__':
     app.run(port=portnum)
-    
+
+    # write the portnum into the config.json file
     with open('../config.json', 'r+') as json_file:
         data = json.load(json_file)
-        data['port'] = portnum
+        data['port'] = int(portnum)
         json_file.seek(0)
-        json.dump(data, json_file)
+        json.dump(data, json_file, indent=4)
         json_file.truncate()
         json_file.close()
