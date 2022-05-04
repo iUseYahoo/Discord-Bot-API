@@ -1,15 +1,14 @@
 # BotAPI-Dictionary
 A discord bot with a built in API,  With a dictionary search function.
 
-### Information
 # What is this repoository?
 - This repository is a discord bot which also contains a API for the discord bot to communicate with and pull the meaning of a certain word they enter if the item is in the database.
 
 # Downloads and Requirements
-# Discord Requirement(s)
+### Discord Requirement(s)
 - [Discord Bot Token](https://discord.com/developers/applications) - (REQUIRED)
 
-# Software Requirements
+### Software Requirements
 - [Python](https://www.python.org/downloads/) - (REQUIRED)
 - [SQLite DB Browser](https://sqlitebrowser.org/dl/) - (OPTIONAL, If you want to add more words to the database.)
 
