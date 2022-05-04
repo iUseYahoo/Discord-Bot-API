@@ -49,8 +49,6 @@ def dictionary():
             return str(result).replace('(', '').replace(')', '').replace("'", '')
 
 if __name__ == '__main__':
-    app.run(port=portnum)
-
     # write the portnum into the config.json file
     with open('../config.json', 'r+') as json_file:
         data = json.load(json_file)
@@ -59,3 +57,6 @@ if __name__ == '__main__':
         json.dump(data, json_file, indent=4)
         json_file.truncate()
         json_file.close()
+
+    app.run(port=portnum)
+
