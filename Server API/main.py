@@ -10,7 +10,7 @@ else:
 
 app = Flask(__name__)
 
-#portnum = int(input("What port number would you like to run the server on? "))
+portnum = 8081
 
 ###########################################
 # Home Page                               #
@@ -49,4 +49,12 @@ def dictionary():
             return str(result).replace('(', '').replace(')', '').replace("'", '')
 
 if __name__ == '__main__':
-    app.run(port=8081)
+    app.run(port=portnum)
+    
+    with open('../config.json', 'r+') as json_file:
+        data = json.load(json_file)
+        data['port'] = portnum
+        json_file.seek(0)
+        json.dump(data, json_file)
+        json_file.truncate()
+        json_file.close()
