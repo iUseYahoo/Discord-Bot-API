@@ -22,9 +22,10 @@ async def dictionary(ctx, *, msg):
 
         for line in bad_sql:
             if msg in line:
-                bad_sql.close()
                 await ctx.send("You're a bad person, But nice try.")
                 await ctx.send("https://tenor.com/view/facepalm-double-crowd-funny-omg-gif-16929018")
+            
+        bad_sql.close()
 
         # get the port from config.json
         with open('../config.json') as json_file:
