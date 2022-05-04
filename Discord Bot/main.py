@@ -18,7 +18,7 @@ async def dictionary(ctx, *, msg):
         await ctx.send("Please enter a word")
     else:
         # get the port from config.json
-        with open('config.json') as json_file:
+        with open('../config.json') as json_file:
             data = json.load(json_file)
             api_port = data['port']
             
