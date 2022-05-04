@@ -2,7 +2,12 @@ import discord
 from discord.ext import commands
 import requests, json
 
-BOT_TOKEN = ""
+json_file = open('../config.json', 'r')
+data = json.load(json_file)
+token = data['token']
+
+BOT_TOKEN = token
+json_file.close()
 PREFIX = "+"
 
 client = commands.Bot(command_prefix=PREFIX)
