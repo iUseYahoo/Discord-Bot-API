@@ -17,6 +17,15 @@ async def dictionary(ctx, *, msg):
     if msg is None:
         await ctx.send("Please enter a word")
     else:
+
+        bad_sql = open('../bad_sql.txt', 'r')
+
+        for line in bad_sql:
+            if msg in line:
+                bad_sql.close()
+                await ctx.send("You're a bad person, But nice try.")
+                await ctx.send("https://tenor.com/view/facepalm-double-crowd-funny-omg-gif-16929018")
+
         # get the port from config.json
         with open('../config.json') as json_file:
             data = json.load(json_file)
