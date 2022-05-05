@@ -16,6 +16,9 @@ client = commands.Bot(command_prefix=PREFIX)
 async def on_ready():
   print("\n== BOT IS ONLINE==\n")
 
+################################################
+# The Dictionary search command
+################################################
 @client.command()
 async def dictionary(ctx, *, msg):
 
