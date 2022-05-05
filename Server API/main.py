@@ -24,7 +24,7 @@ def home_page():
 ###########################################
 # Dictionary DB Page                      #
 ###########################################
-@app.route('/dictionary/', methods=['GET'])
+@app.route('/dict/', methods=['GET'])
 def dictionary():
     get_word = request.args.get('word').lower()
 
