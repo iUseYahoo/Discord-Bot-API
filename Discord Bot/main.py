@@ -17,7 +17,7 @@ async def on_ready():
   print("\n== BOT IS ONLINE==\n")
 
 @client.command()
-async def dict(ctx, *, msg):
+async def dictionary(ctx, *, msg):
 
     if msg is None:
         await ctx.send("Please enter a word")
