@@ -48,6 +48,32 @@ def dictionary():
         else:
             return str(result).replace('(', '').replace(')', '').replace("'", '')
 
+        
+###########################################
+# Pull information on a IP from Whoi.is   #
+###########################################
+@app.route('/whois/', methods=['GET'])
+def whoisv1():
+    entered_ip = request.args.get("ip")
+    whois_url = f'https://who.is/whois-ip/ip-address/{entered_ip}'
+
+    if entered_ip == "":
+        return "Please enter an IP address."
+    else:
+        headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+
+        # get the value of class airT
+        site = requests.get(whois_url, headers=headers)
+        soup = BeautifulSoup(site.content, 'html.parser')
+
+        whoisResult = soup.find(class_='col-md-12 queryResponseBodyKey')
+
+        if whoisResult is None:
+            return "No results found."
+        else:
+            return whoisResult.prettify()
+
+
 if __name__ == '__main__':
     # write the portnum into the config.json file
     with open('../config.json', 'r+') as json_file:
