@@ -1,5 +1,6 @@
 from flask import *
 import sqlite3, os
+from bs4 import BeautifulSoup
 connection = sqlite3.connect('./Database/main.db', check_same_thread=False)
 cursor = connection.cursor()
 
