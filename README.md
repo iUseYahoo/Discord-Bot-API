@@ -1,8 +1,8 @@
 # BotAPI-Dictionary
-A discord bot with its own API, With a dictionary search function.
+A discord bot with its own API.
 
 # What is this repoository?
-- This repository is a discord bot which also contains a API for the discord bot to communicate with and pull the meaning of a certain word they enter if the item is in the database.
+- This repository is a discord bot which also contains a API for the discord bot to use.
 
 # Downloads and Requirements
 ### Discord Requirement(s)
