@@ -14,6 +14,7 @@ A discord bot with its own API, With a dictionary search function.
 
 # Python Package Requirements
 - [Flask](https://pypi.org/project/Flask/) - (REQUIRED)
+- [BeautifulSoup](https://pypi.org/project/bs4/) - (REQUIRED, If you want to use the whois API endpoint)
 
 # Setup
 - 1. Open [config.json](https://github.com/iUseYahoo/Discord-Bot-API-Dictionary/blob/main/config.json) and set a port for the API and Bot to use.
